@@ -1,0 +1,72 @@
+.stat-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.stat-info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 128px;
+  margin-right: 16px;
+}
+
+.evolution-card {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 176px;
+  width: 128px;
+
+  box-sizing: border-box;
+
+  .image {
+    width: 100px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .image-container {
+    margin-bottom: 16px;
+  }
+
+  .text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .id-label {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #737373;
+  }
+
+  .name-label {
+    font-size: 1rem;
+    line-height: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #2769be;
+
+    &:hover {
+      text-decoration: underline;
+      color: #a42121;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.evolution-chain-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .evolution-card-container {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .evolution-subchain-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.evolution-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 600px;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #acacac80;
+
+    &:hover {
+      background-color: #acacac;
+    }
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #868686;
+
+    &:hover {
+      background-color: #626262;
+    }
+
+    &:active {
+      background-color: #474747;
+    }
+  }
+}

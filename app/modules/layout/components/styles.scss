@@ -1,0 +1,56 @@
+@use 'sass:map';
+
+$header-area: header;
+$sidebar-area: sidebar;
+$main-area: main;
+$footer-area: footer;
+
+$breakpoints: (
+  xs: 0px,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1536px,
+);
+
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 64px 300px 1fr 64px;
+  grid-template-areas: '#{$header-area}''#{$sidebar-area}''#{$main-area}''#{$footer-area}';
+  @media only screen and (min-width: map.get($breakpoints, sm)) {
+    grid-template-columns: 128px 300px 1fr 128px;
+    grid-template-rows: 64px 1fr 64px;
+    grid-template-areas: '#{$header-area} #{$header-area} #{$header-area} #{$header-area}''. #{$sidebar-area} #{$main-area} .''. #{$footer-area} #{$footer-area} .';
+  }
+}
+
+.main {
+  max-width: 100%;
+  grid-area: $main-area;
+  background-color: #bdbdbd;
+}
+
+.sidebar {
+  grid-area: $sidebar-area;
+  background-color: #a0a0a0;
+}
+
+.header {
+  grid-area: $header-area;
+  background-color: #6b6b6b;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  grid-area: $footer-area;
+  background-color: #6b6b6b;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+}

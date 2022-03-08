@@ -6,7 +6,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'bundle.js',
-    chunkFilename: '[id].js',
     publicPath: '/',
   },
   devServer: { historyApiFallback: true },

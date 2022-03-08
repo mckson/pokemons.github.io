@@ -1,20 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getPokemonSpecies } from '../../pokedex/actions';
 import { selectedSpecies } from '../../pokedex/selectors';
 import { selectedPokemon as selectedPokemonSelector } from '../selectors';
 import { getPokemon } from '../actions';
 import Pokemon from '../components/Pokemon';
+import { Routes } from '../../../constants/routes';
 
 const mapStat = (stat) => (stat ? stat.base_stat : null);
+const mapVariety = (v, index) => ({
+  name: v.pokemon.name,
+  url: v.pokemon.url,
+  isDefault: v.is_default,
+  index,
+});
 
 const PokemonContainer = () => {
+  const [selectedVariety, setSelectedVariety] = useState(null);
+  const [varieties, setVarieties] = useState([]);
+
   const species = useSelector(selectedSpecies);
   const selectedPokemon = useSelector(selectedPokemonSelector);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { pokemon } = useParams();
 
   useEffect(() => {
@@ -22,14 +34,25 @@ const PokemonContainer = () => {
   }, [dispatch, pokemon]);
 
   useEffect(() => {
-    const defaultVariety = species?.varieties?.filter((v) => v.is_default)?.[0];
+    const speciesVarieties = species?.varieties.map(mapVariety);
+    const defaultVariety = speciesVarieties?.find((v) => v.isDefault);
 
-    defaultVariety && dispatch(getPokemon({ url: defaultVariety.pokemon.url }));
+    if (defaultVariety && speciesVarieties) {
+      setSelectedVariety(defaultVariety);
+      setVarieties(speciesVarieties);
+    }
   }, [dispatch, species?.varieties]);
+
+  useEffect(() => {
+    if (selectedVariety) {
+      dispatch(getPokemon({ url: selectedVariety.url }));
+    }
+  }, [dispatch, selectedVariety]);
 
   const pokemonData =
     selectedPokemon && species
       ? {
+          name: species.name,
           image: selectedPokemon.sprites.other['official-artwork'].front_default,
           nationalNumber: species.id,
           types: selectedPokemon.types.map((t) => t.type.name),
@@ -65,7 +88,30 @@ const PokemonContainer = () => {
         }
       : null;
 
-  return pokemonData && <Pokemon pokemon={pokemonData} />;
+  const handleVarietySelect = (varietyIndex) => {
+    const selectedVariety = varieties.find((v) => v.index === varietyIndex);
+    setSelectedVariety(selectedVariety);
+  };
+
+  const handleAbilityClick = (name) => {
+    if (name) {
+      navigate(`${Routes.ABILITIES.ROOT}/${name}`);
+    } else {
+      console.error('No name was specified for navigate');
+    }
+  };
+
+  return (
+    pokemonData && (
+      <Pokemon
+        pokemon={pokemonData}
+        variety={selectedVariety}
+        varieties={varieties}
+        onVarietySelect={handleVarietySelect}
+        onAbilityClick={handleAbilityClick}
+      />
+    )
+  );
 };
 
 export default PokemonContainer;

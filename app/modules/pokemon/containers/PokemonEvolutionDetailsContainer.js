@@ -54,7 +54,7 @@ const getEvolutionDetails = (evolutionDetails) => {
     };
   }
 
-  return currentEvolutionDetails[0];
+  return currentEvolutionDetails?.[0];
 };
 
 const PokemonEvolutionDetailsContainer = ({ nodeIndex, evolutionDetails }) => {
@@ -65,7 +65,7 @@ const PokemonEvolutionDetailsContainer = ({ nodeIndex, evolutionDetails }) => {
   const currentTrigger = useSelector(trigger(nodeIndex));
 
   const { currentEvolutionDetails, type, happiness, daytime, minLevel } =
-    getEvolutionDetails(evolutionDetails);
+    getEvolutionDetails(evolutionDetails) || {};
 
   useEffect(() => {
     if (!currentTrigger && currentEvolutionDetails) {

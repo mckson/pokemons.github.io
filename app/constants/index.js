@@ -75,9 +75,7 @@ export const getStatType = (stat) => {
   if (stat < 90) return STAT_TYPE.MEDIUM;
   if (stat < 120) return STAT_TYPE.NORMAL;
   if (stat < 150) return STAT_TYPE.GOOD;
-  if (stat <= 180) return STAT_TYPE.COOL;
-
-  return null;
+  return STAT_TYPE.COOL;
 };
 
 export const getPokemonTypeByTypeName = (typeName) => {

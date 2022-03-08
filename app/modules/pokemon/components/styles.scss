@@ -1,3 +1,13 @@
+@use 'sass:map';
+
+$breakpoints: (
+  xs: 0px,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1536px,
+);
+
 .stat-container {
   display: flex;
   align-items: center;
@@ -9,6 +19,22 @@
   justify-content: space-between;
   width: 128px;
   margin-right: 16px;
+}
+
+.varieties-tabs {
+  width: 600px;
+}
+
+.pokemon-info-container {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  @media only screen and (min-width: map.get($breakpoints, sm)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-container {
+    padding: 16px;
+  }
 }
 
 .evolution-card {

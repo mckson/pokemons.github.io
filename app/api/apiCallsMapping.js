@@ -4,6 +4,8 @@ import * as pokemonActions from '../modules/pokemon/actions';
 import * as pokemonApi from '../modules/pokemon/api';
 import * as evolutionActions from '../modules/evolution/actions';
 import * as evolutionApi from '../modules/evolution/api';
+import * as abilityActions from '../modules/ability/actions';
+import * as abilityApi from '../modules/ability/api';
 
 const apiCallsMapping = (action) => {
   switch (action.type) {
@@ -28,6 +30,13 @@ const apiCallsMapping = (action) => {
     }
     case evolutionActions.getEvolutionTrigger({}).type: {
       return evolutionApi.getEvolutionTrigger;
+    }
+    case abilityActions.getAbilities().type: {
+      return abilityApi.getAbilities;
+    }
+    case abilityActions.getSelectedAbility().type:
+    case abilityActions.getAbility().type: {
+      return abilityApi.getAbility;
     }
     default: {
       return;

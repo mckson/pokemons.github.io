@@ -25,15 +25,22 @@ const PokemonStats = ({ stats }) => {
 
   return (
     <div>
-      {hp && <Stat name={'HP'} value={hp} />}
-      {attack && <Stat name={'Attack'} value={attack} />}
-      {defense && <Stat name={'Defense'} value={defense} />}
-      {specialAttack && <Stat name={'Sp. Atk'} value={specialAttack} />}
-      {specialDefense && <Stat name={'Sp. Def'} value={specialDefense} />}
-      {speed && <Stat name={'Speed'} value={speed} />}
-      <div className="stat-info-container">
-        <div>Total:</div>
-        <div>{hp + attack + defense + specialAttack + specialDefense + speed}</div>
+      <div>
+        <b>
+          <h3>Base stats</h3>
+        </b>
+      </div>
+      <div>
+        {hp && <Stat name={'HP'} value={hp} />}
+        {attack && <Stat name={'Attack'} value={attack} />}
+        {defense && <Stat name={'Defense'} value={defense} />}
+        {specialAttack && <Stat name={'Sp. Atk'} value={specialAttack} />}
+        {specialDefense && <Stat name={'Sp. Def'} value={specialDefense} />}
+        {speed && <Stat name={'Speed'} value={speed} />}
+        <div className="stat-info-container">
+          <div>Total:</div>
+          <div>{hp + attack + defense + specialAttack + specialDefense + speed}</div>
+        </div>
       </div>
     </div>
   );

@@ -5,9 +5,9 @@ import { EVOLUTION_TRIGGERS } from '../../../constants';
 import ArrowRight from '../../../constants/icons/arrowRight';
 
 const getText = ({ trigger, type, happiness, minLevel }) => {
-  if (type.id === EVOLUTION_TRIGGERS.USE_ITEM.id)
+  if (type?.id === EVOLUTION_TRIGGERS.USE_ITEM.id)
     return { text: `${trigger?.toLowerCase()}`, needItem: true };
-  if (type.id === EVOLUTION_TRIGGERS.LEVEL_UP.id) {
+  if (type?.id === EVOLUTION_TRIGGERS.LEVEL_UP.id) {
     if (happiness) {
       return { text: `${trigger?.toLowerCase()}, high happiness` };
     }

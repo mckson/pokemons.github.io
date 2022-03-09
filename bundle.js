@@ -3578,7 +3578,7 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"/public/static/images/pokeball.png\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokeball.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"./public/static/images/pokeball.png\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokeball.png?");
 
 /***/ }),
 
@@ -3589,7 +3589,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"/public/static/images/pokeball_placeholder.png\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokeball_placeholder.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"./public/static/images/pokeball_placeholder.png\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokeball_placeholder.png?");
 
 /***/ }),
 
@@ -3600,7 +3600,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"/public/static/images/pokemons.jpg\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokemons.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"./public/static/images/pokemons.jpg\");\n\n//# sourceURL=webpack://pokemons-app/./public/static/images/pokemons.jpg?");
 
 /***/ }),
 
@@ -4948,7 +4948,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "287fa4104e0f48cf9bf4"; }
+/******/ 		__webpack_require__.h = function() { return "02923fd66970f2f9b6a6"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
